@@ -1,0 +1,843 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A client-server example - AngularJS 1.x / Spring 4">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-spring-angular1.x-juillet-2014/introduction.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="the-spring-4-server.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>1. Introduction - A client-server example - AngularJS 1.x / Spring 4</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "A client-server example - AngularJS 1.x / Spring 4";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="A client-server example - AngularJS 1.x / Spring 4" class="md-header__button md-logo" aria-label="A client-server example - AngularJS 1.x / Spring 4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            A client-server example - AngularJS 1.x / Spring 4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-spring-angular1.x-juillet-2014" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="A client-server example - AngularJS 1.x / Spring 4" class="md-nav__button md-logo" aria-label="A client-server example - AngularJS 1.x / Spring 4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    A client-server example - AngularJS 1.x / Spring 4
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-spring-angular1.x-juillet-2014" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduction.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-application-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. The Application Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-tools-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Tools Used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-application-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Application Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3. Application Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131-creating-the-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.1. Creating the Database
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132-web-server-json-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.2. Web Server / JSON Implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-implementing-the-angular-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3.3. Implementing the Angular client
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-spring-4-server.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. The Spring 4 Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-angular-js-client.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Angular JS client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="running-the-application.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Running the application
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendices.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Appendices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="refheading1882601168461456"></a></p>
+<h1 id="1-introduction">1. <span style="color: #365f91"><strong>Introduction</strong></span></h1>
+<p>The PDF of the document is available |<a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQDhjxIo7opPTrGYf2DvQlirATrbIpNZwF3vjrEE5fY5nPk?e=0xNNqd">HERE</a>|.</p>
+<p>The examples in the document are available |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQAj6GxmG6PETYZKRGkHmlOrAUHOZ-GVlbDnmJcaNHRoPxA?e=eFVJOP">HERE</a>|.</p>
+<p>Here, we propose to introduce two frameworks using a client/server example:</p>
+<ul>
+<li><strong>AngularJS</strong> used for the client. For simplicity, it will be referred to as <strong>Angular</strong> hereafter;</li>
+<li><strong>Spring 4</strong> used for the server. For simplicity, it will be referred to as <strong>Spring</strong> hereafter;</li>
+</ul>
+<p>Understanding this document requires certain prerequisites:</p>
+<ul>
+<li>an intermediate level of Java EE;</li>
+<li>knowledge of JPA (Java Persistence API), which will be used to access a database;</li>
+<li>knowledge of at least one previous version of Spring to understand the philosophy of this framework;</li>
+<li>experience using Maven to configure Java projects;</li>
+<li>a basic understanding of HTTP communication in a web application;</li>
+<li>common HTML tags;</li>
+<li>basic knowledge of JavaScript;</li>
+</ul>
+<p>Other necessary knowledge will be introduced and explained as the case study progresses.</p>
+<p><strong>This document is not a course and is incomplete in many respects</strong>. To learn more about the two frameworks, you can use the following references:</p>
+<ul>
+<li><strong>[ref1]</strong>: the book &quot;<strong>Pro</strong> <strong><span style="color: #000000">AngularJS</span></strong>&quot; by <strong>Adam Freeman</strong>, published by <strong>Apress</strong>. It is an excellent book. The source code for the examples in this book is available for free at [<a href="http://www.apress.com/downloadable/download/sample/sample_id/1527/"><u><span style="color: #0563c1">http://www.apress.com/downloadable/download/sample/sample_id/1527/</span></u></a>];</li>
+<li>[<strong>ref2</strong>]: the official AngularJS documentation [<a href="https://docs.angularjs.org/guide"><u><span style="color: #0563c1">https://docs.angularjs.org/guide</span></u></a>]</li>
+<li><strong>[ref3]</strong>: the book &quot;<strong>Spring Data</strong>&quot; from O&#x27;Reilly [<a href="http://shop.oreilly.com/product/0636920024767.do"><u><span style="color: #0563c1">http://shop.oreilly.com/product/0636920024767.do</span></u></a>], which covers the use of the [Spring Data] framework for accessing data, whether from relational databases or non-relational databases (NoSQL);</li>
+<li>[<strong>ref4</strong>]: the book &quot;<strong>Pro Spring 3</strong>&quot; published by <strong>Apress</strong>. This is the predecessor to Spring 4, but the main concepts are already covered;</li>
+<li>[<strong>ref5</strong>]: the Spring 4 reference documentation [<a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/pdf/spring-framework-reference.pdf"><u><span style="color: #0563c1">http://docs.spring.io/spring/docs/current/spring-framework-reference/pdf/spring-framework-reference.pdf</span></u></a>].</li>
+</ul>
+<p>The sources used for this document are those cited above, plus the indispensable [<a href="http://stackoverflow.com/"><u><span style="color: #0563c1">http://stackoverflow.com/</span></u></a>] for the numerous debugging sessions.</p>
+<p><a id="refheading99511454977699"></a></p>
+<h2 id="11-the-application-architecture">1.1. <span style="color: #4f81bd"><strong>The Application Architecture</strong></span></h2>
+<p><span style="color: #000000">The application under consideration will have the following architecture:</span></p>
+<p><img src="images/1000000000000294000002EC2BFC7EC3.png" style="width:10.479cm;height:11.876cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000294000002EC2BFC7EC3.png" /></p>
+<ul>
+<li><span style="color: #000000">In [1], a web server delivers static pages to a browser. These pages contain an AngularJS application built on the MVC (Model–View–Controller) pattern. The model here encompasses both the views and the domain, represented here by the [Services] layer;</span></li>
+<li><span style="color: #000000">the user will interact with the views presented to them in the browser. Their actions will sometimes require querying the Spring 4 server [2]. The server will process the request and return a JSON (JavaScript Object Notation) response [3]. This response will be used to update the view presented to the user.</span></li>
+</ul>
+<p><a id="refheading2334501890746156"></a></p>
+<h2 id="12-tools-used">1.2. <span style="color: #4f81bd"><strong>Tools Used</strong></span></h2>
+<p><span style="color: #000000">In this document, the following development tools are used:</span></p>
+<ul>
+<li><a href="http://spring.io/tools/sts"><u><span style="color: #0563c1">Spring Tool Suite</span></u></a><span style="color: #000000"> for the Spring server: available as a free download;</span></li>
+<li><a href="http://www.jetbrains.com/webstorm/download/"><u><span style="color: #0563c1">WebStorm</span></u></a><span style="color: #000000"> for the Angular client: a one-month trial version is available for free download;</span></li>
+<li><a href="http://www.wampserver.com/"><u><span style="color: #0563c1">Wampserver</span></u></a><span style="color: #000000"> for managing the MySQL 5 database: available for free download;</span></li>
+</ul>
+<p><span style="color: #000000">The installation of these and other tools is described in Section</span><a href="#refheading1633352067866943"><u><span style="color: #0563c1"> 6</span></u></a><span style="color: #000000">.</span></p>
+<p><a id="refheading569731429907001"></a></p>
+<h2 id="13-application-features">1.3. <span style="color: #4f81bd"><strong>Application Features</strong></span></h2>
+<p>The sample code is available |<a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQAj6GxmG6PETYZKRGkHmlOrAUHOZ-GVlbDnmJcaNHRoPxA?e=eFVJOP">HERE</a>| as a downloadable <em>ZIP</em> file.</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000143000000C518B73801.png" style="display:inline-block; margin:4px;width:5.98cm;height:3.648cm;" class="odt-zoomable" data-zoom-src="images/1000000000000143000000C518B73801.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000C0000000698BA386CB.png" style="display:inline-block; margin:4px;width:3.56cm;height:1.947cm;" class="odt-zoomable" data-zoom-src="images/10000000000000C0000000698BA386CB.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">The server is contained in the [rdvmedecins-metier-dao-v2] and [rdvmedecins-webapi-v3] folders;</span></li>
+<li><span style="color: #000000">The client is located in the [rdvmedecins-angular-v2] folder;</span></li>
+<li><span style="color: #000000">The SQL script for generating the MySQL5 database is in the [database] folder;</span>
+<a id="refheading569751429907001"></a></li>
+</ul>
+<h3 id="131-creating-the-database">1.3.1. <span style="color: #4f81bd"><strong>Creating the Database</strong></span></h3>
+<p><span style="color: #000000">To test the application, we first create the database using the SQL script [dbrdvmedecins.sql]. We use the [PhpMyAdmin] tool from WampServer:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007C70000029FB2050FBF.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.066cm;" class="odt-zoomable" data-zoom-src="images/10000000000007C70000029FB2050FBF.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">In [1], select the [phpMyAdmin] tool from WampServer;</span></li>
+<li><span style="color: #000000">In [2], select the [Import] option;</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000069F000001FD91FB7BFE.png" style="display:inline-block; margin:4px;width:17.999cm;height:5.405cm;" class="odt-zoomable" data-zoom-src="images/100000000000069F000001FD91FB7BFE.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">in [3], select the file [database/dbrdvmedecins.sql];</span></li>
+<li><span style="color: #000000">in [4], run it;</span></li>
+<li><span style="color: #000000">in [5], the database is created.</span></li>
+</ul>
+<p><a id="refheading569771429907001"></a></p>
+<h3 id="132-web-server-json-implementation">1.3.2. <span style="color: #4f81bd"><strong>Web Server / JSON Implementation</strong></span></h3>
+<p><span style="color: #000000">Using Spring Tool Suite (STS), import the two Spring 4 server Maven projects:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007830000033FAE3B8968.png" style="display:inline-block; margin:4px;width:17.999cm;height:7.779cm;" class="odt-zoomable" data-zoom-src="images/10000000000007830000033FAE3B8968.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">In [1] and [2], import the Maven projects;</span></li>
+<li><span style="color: #000000">in [3], we specify the parent folder for the two projects to be imported;</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007B4000002F75DD11407.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.929cm;" class="odt-zoomable" data-zoom-src="images/10000000000007B4000002F75DD11407.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">in [3], the imported projects. The projects may contain errors. Each of them must use a compiler &gt;=1.7:</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002970000009EFA7963FB.png" style="display:inline-block; margin:4px;width:12.28cm;height:2.926cm;" class="odt-zoomable" data-zoom-src="images/10000000000002970000009EFA7963FB.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Therefore, a JVM version &gt;=1.7 is required:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D40000007A0EDB48C5.png" style="display:inline-block; margin:4px;width:8.67cm;height:2.26cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D40000007A0EDB48C5.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
+
+<p><span style="color: #000000">Once there are no more JVM errors, we can run the [rdvmedecins-webapi-v3] project:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007250000031CA4FC341D.png" style="display:inline-block; margin:4px;width:17.999cm;height:7.833cm;" class="odt-zoomable" data-zoom-src="images/10000000000007250000031CA4FC341D.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">In [4], [5], and [6], we run the [rdvmedecins-webapi-v3] project as a </span><a href="http://projects.spring.io/spring-boot/"><u><span style="color: #0563c1">Spring Boot</span></u></a><span style="color: #000000"> application;</span></li>
+</ul>
+<p><span style="color: #000000">We then get the following logs in the STS console:</span></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#000000">.   ____          _            __ _ _</span></span>
+<span class="odt-code-line"><span style="color:#000000"> /\\ / ___&#x27;_ __ _ _(_)_ __  __ _ \ \ \ \</span></span>
+<span class="odt-code-line"><span style="color:#000000">( ( )\___ | &#x27;_ | &#x27;_| | &#x27;_ \/ _` | \ \ \ \</span></span>
+<span class="odt-code-line"><span style="color:#000000"> \\/  ___)| |_)| | | | | || (_| |  ) ) ) )</span></span>
+<span class="odt-code-line"><span style="color:#000000">  &#x27;  |____| .__|_| |_|_| |_\__, | / / / /</span></span>
+<span class="odt-code-line"><span style="color:#000000"> =========|_|==============|___/=/_/_/_/</span></span>
+<span class="odt-code-line"><span style="color:#000000"> :: Spring Boot ::        (v1.0.0.RELEASE)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">2014-06-05 12:22:34.049  INFO 9296 --- [           main] rdvmedecins.web.boot.Boot                : Starting Boot on Gportpers3 with PID 9296 (D:\data\istia-1314\polys\istia\angularjs-spring4\rdvmedecins-webapi\target\classes started by ST)</span></span>
+<span class="odt-code-line"><span style="color:#000000">2014-06-05 12:22:34.122  INFO 9296 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@4b4bee22: startup date [Thu Jun 05 12:22:34 CEST 2014]; root of context hierarchy</span></span>
+<span class="odt-code-line"><span style="color:#000000">2014-06-05 12:22:35.083  INFO 9296 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean &#x27;org.springframework.boot.autoconfigure.AutoConfigurationPackages&#x27;: replacing [Generic bean: class [org.springframework.boot.autoconfigure.AutoConfigurationPackages$BasePackages]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null] with [Generic bean: class [org.springframework.boot.autoconfigure.AutoConfigurationPackages$BasePackages]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null]</span></span>
+<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line"><span style="color:#000000"> s.b.c.e.t.TomcatEmbeddedServletContainer: Tomcat started on port(s): 8080/http</span></span>
+<span class="odt-code-line"><span style="color:#000000">2014-06-05 12:22:41.630  INFO 9296 --- [           main] rdvmedecins.web.boot.Boot : Started Boot in 8.0 seconds (JVM running for 8.944)</span></span>
+</code></pre></div>
+
+<ul>
+<li><span style="color: #000000">Lines 13-14: The application has started on a Tomcat server.</span>
+<a id="refheading1590371672552291"></a></li>
+</ul>
+<h3 id="133-implementing-the-angular-client">1.3.3. <span style="color: #4f81bd"><strong>Implementing the Angular client</strong></span></h3>
+<p><span style="color: #000000">We open the [rdvmedecins-angular-v2] folder with WebStorm:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000006E9000002A1694871D6.png" style="display:inline-block; margin:4px;width:17.999cm;height:6.847cm;" class="odt-zoomable" data-zoom-src="images/10000000000006E9000002A1694871D6.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">In [1], select the [Open Directory] option;</span></li>
+<li><span style="color: #000000">in [2], select the [rdvmedecins-angular-v2] folder;</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005C6000003E6AE578CB9.png" style="display:inline-block; margin:4px;width:17.999cm;height:12.153cm;" class="odt-zoomable" data-zoom-src="images/10000000000005C6000003E6AE578CB9.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">in [3], the folder tree;</span></li>
+<li><span style="color: #000000">In [4], select the application’s main page [app.html];</span></li>
+<li><span style="color: #000000">in [5], open it in a modern browser;</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000007DF0000046C0B82B3CD.png" style="display:inline-block; margin:4px;width:17.999cm;height:10.112cm;" class="odt-zoomable" data-zoom-src="images/10000000000007DF0000046C0B82B3CD.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">in [6], the application’s login page. This is an appointment scheduling application for doctors. This application has already been covered in the document </span><a href="http://tahe.developpez.com/java/primefaces/"><u><span style="color: #0563c1">Introduction to JSF2, PrimeFaces, and PrimeFaces Mobile frameworks</span></u></a><span style="color: #000000">;</span></li>
+<li><span style="color: #000000">in [7], a checkbox that allows you to enable or disable [debug] mode. This mode is indicated by the presence of the [8] frame, which displays the model of the current view;</span></li>
+<li><span style="color: #000000">in [9], an artificial wait time in milliseconds. It defaults to 0 (no wait). If N is the value of this wait time, any user action will be executed after a wait time of N milliseconds. This allows you to see the wait management implemented by the application;</span></li>
+<li><span style="color: #000000">in [10], the Spring 4 server URL. Based on what preceded, this is [http://localhost:8080];</span></li>
+<li><span style="color: #000000">in [11] and [12], the username and password of the user who wants to use the application. There are two users: </span><strong>admin/admin</strong> <span style="color: #000000">(login/password) with a role (ADMIN) and </span><strong>user/user</strong> <span style="color: #000000">with a role (USER). Only the ADMIN role has permission to use the application. The USER role is included solely to demonstrate the server’s response in this use case;</span></li>
+<li><span style="color: #000000">in [13], the button that allows you to connect to the server;</span></li>
+<li><span style="color: #000000">in [14], the application language. There are two: French (default) and English.</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003F1000000CD42CB2AB2.png" style="display:inline-block; margin:4px;width:13.349cm;height:2.713cm;" class="odt-zoomable" data-zoom-src="images/10000000000003F1000000CD42CB2AB2.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">at [1], you log in;</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003EF0000047D121B03AF.png" style="display:inline-block; margin:4px;width:13.323cm;height:15.201cm;" class="odt-zoomable" data-zoom-src="images/10000000000003EF0000047D121B03AF.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">once logged in, you can choose the doctor with whom you want an appointment [2] and the date of the appointment [3];</span></li>
+<li><span style="color: #000000">In [4], you request to view the selected doctor’s schedule for the chosen day;</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000039F000003E89CBA1112.png" style="display:inline-block; margin:4px;width:12.264cm;height:13.229cm;" class="odt-zoomable" data-zoom-src="images/100000000000039F000003E89CBA1112.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">Once the doctor’s schedule is displayed, you can book a time slot [5];</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000046D00000344CC2465C5.png" style="display:inline-block; margin:4px;width:14.99cm;height:11.061cm;" class="odt-zoomable" data-zoom-src="images/100000000000046D00000344CC2465C5.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">In [6], select the patient for the appointment and confirm your selection in [7];</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000432000003EF376EAFAF.png" style="display:inline-block; margin:4px;width:14.208cm;height:13.323cm;" class="odt-zoomable" data-zoom-src="images/1000000000000432000003EF376EAFAF.png" /></td></tr></table>
+
+<p><span style="color: #000000">Once the appointment is confirmed, you are automatically returned to the schedule where the new appointment is now listed. This appointment can be deleted later [7].</span></p>
+<p><span style="color: #000000">The main features have been described. They are simple. Those not described are navigation functions for returning to a previous view. Let’s conclude with language settings:</span></p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000005BA000003B62BAA3BC6.png" style="display:inline-block; margin:4px;width:17.999cm;height:11.665cm;" class="odt-zoomable" data-zoom-src="images/10000000000005BA000003B62BAA3BC6.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">in [1], you switch from French to English;</span></li>
+</ul>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000058E000003B4AAC56BD7.png" style="display:inline-block; margin:4px;width:17.999cm;height:12cm;" class="odt-zoomable" data-zoom-src="images/100000000000058E000003B4AAC56BD7.png" /></td></tr></table>
+
+<ul>
+<li><span style="color: #000000">in [2], the view switches to English, including the calendar;</span></li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
