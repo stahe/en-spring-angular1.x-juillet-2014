@@ -626,10 +626,10 @@
 
 
 <p><a id="refheading1633352067866943"></a></p>
-<h1 id="6-appendices">6. <span style="color: #365f91"><strong>Appendices</strong></span></h1>
+<h1 id="6-appendices">6. <span style="color: #365f91">Appendices</span></h1>
 <p><span style="color: #000000">Here we explain how to install the tools used in this document on Windows 7 machines.</span></p>
 <p><a id="refheading1633372067866943"></a></p>
-<h2 id="61-installing-sts-spring-tool-suite">6.1. <span style="color: #4f81bd"><strong>Installing STS (Spring Tool Suite)</strong></span></h2>
+<h2 id="61-installing-sts-spring-tool-suite">6.1. <span style="color: #4f81bd">Installing STS (Spring Tool Suite)</span></h2>
 <p>We will install <strong>SpringSource Tool Suite</strong> [<a href="http://www.springsource.com/developer/sts"><u><span style="color: #0563c1">http://www.springsource.com/developer/sts</span></u></a>], an Eclipse environment pre-equipped with numerous plugins related to the Spring framework and also with a pre-installed Maven configuration.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004F6000002567E78E13E.png" style="display:inline-block; margin:4px;width:16.801cm;height:7.911cm;" class="odt-zoomable" data-zoom-src="images/10000000000004F6000002567E78E13E.png" /></td></tr></table>
 
@@ -684,28 +684,28 @@
 <p><img src="images/10000000000003C600000186DE03B7E4.png" style="width:17.729cm;height:7.158cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003C600000186DE03B7E4.png" /></p>
 <p>We will provide few details on using [PhpMyAdmin]. In section<a href="#refheading569751429907001"><u><span style="color: #0563c1"> 1.3.1</span></u></a>, we show how to use it to create the application’s database.</p>
 <p><a id="refheading1633392067866943"></a></p>
-<h2 id="63-installing-webstorm">6.3. <span style="color: #4f81bd"><strong>Installing [WebStorm]</strong></span></h2>
+<h2 id="63-installing-webstorm">6.3. <span style="color: #4f81bd">Installing [WebStorm]</span></h2>
 <p><span style="color: #000000">[WebStorm] (WS) is JetBrains’ IDE for developing HTML/CSS/JS applications. I found it perfect for developing Angular applications. The download site is [</span><a href="http://www.jetbrains.com/webstorm/download/"><u><span style="color: #0563c1">http://www.jetbrains.com/webstorm/download/</span></u></a><span style="color: #000000">]. It is a paid IDE, but a 30-day trial version is available for download. There are affordable personal and student versions.</span></p>
 <p><span style="color: #000000">Its use within the application is described in section</span><a href="#refheading1590371672552291"><u><span style="color: #0563c1"> 1.3.3</span></u></a><span style="color: #000000">. To install JS libraries within an application, WS uses a tool called [bower]. This tool is a module of [node.js], a collection of JS libraries. Additionally, JS libraries are fetched from a Git repository, requiring a Git client on the machine performing the download.</span></p>
 <p><a id="refheading1633412067866943"></a></p>
-<h3 id="631-installing-nodejs">6.3.1. <span style="color: #4f81bd"><strong>Installing [node.js]</strong></span></h3>
+<h3 id="631-installing-nodejs">6.3.1. <span style="color: #4f81bd">Installing [node.js]</span></h3>
 <p><span style="color: #000000">The [node.js] download site is [</span><a href="http://nodejs.org/"><u><span style="color: #0563c1">http://nodejs.org/</span></u></a><span style="color: #000000">]. Download the installer and then run it. That is all you need to do for now.</span></p>
 <p><a id="refheading1633432067866943"></a></p>
-<h3 id="632-installing-the-bower-tool">6.3.2. <span style="color: #4f81bd"><strong>Installing the [bower] tool</strong></span></h3>
+<h3 id="632-installing-the-bower-tool">6.3.2. <span style="color: #4f81bd">Installing the [bower] tool</span></h3>
 <p><span style="color: #000000">The [bower] tool, which allows you to download JavaScript libraries, can be installed in several ways. We will install it from the command line:</span></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">C:\Users\Serge Tahé&gt;</span><span style="color:#ff3333">npm install -g bower</span></span>
-<span class="odt-code-line"><span style="color:#000000">C:\Users\Serge Tahé\AppData\Roaming\npm\bower -&gt; C:\Users\Serge Tahé\AppData\Roaming\npm\node_modules\bower\bin\bower</span></span>
-<span class="odt-code-line"><span style="color:#000000">bower@1.3.7 C:\Users\Serge Tahé\AppData\Roaming\npm\node_modules\bower</span></span>
-<span class="odt-code-line"><span style="color:#000000">├── stringify-object@0.2.1</span></span>
-<span class="odt-code-line"><span style="color:#000000">├── is-root@0.1.0</span></span>
-<span class="odt-code-line"><span style="color:#000000">├── junk@0.3.0</span></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">├── insight@0.3.1 (object-assign@0.1.2, async@0.2.10, lodash.debounce@2.4.1, req</span></span>
-<span class="odt-code-line"><span style="color:#000000">uest@2.27.0, configstore@0.2.3, inquirer@0.4.1)</span></span>
-<span class="odt-code-line"><span style="color:#000000">├── mout@0.9.1</span></span>
-<span class="odt-code-line"><span style="color:#000000">└── inquirer@0.5.1 (readline2@0.1.0, mute-stream@0.0.4, through@2.3.4, async@0.8</span></span>
-<span class="odt-code-line"><span style="color:#000000">.0, lodash@2.4.1, cli-color@0.3.2)</span></span>
+<span class="odt-code-line">C:\Users\Serge Tahé\AppData\Roaming\npm\bower -&gt; C:\Users\Serge Tahé\AppData\Roaming\npm\node_modules\bower\bin\bower</span>
+<span class="odt-code-line">bower@1.3.7 C:\Users\Serge Tahé\AppData\Roaming\npm\node_modules\bower</span>
+<span class="odt-code-line">├── stringify-object@0.2.1</span>
+<span class="odt-code-line">├── is-root@0.1.0</span>
+<span class="odt-code-line">├── junk@0.3.0</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">├── insight@0.3.1 (object-assign@0.1.2, async@0.2.10, lodash.debounce@2.4.1, req</span>
+<span class="odt-code-line">uest@2.27.0, configstore@0.2.3, inquirer@0.4.1)</span>
+<span class="odt-code-line">├── mout@0.9.1</span>
+<span class="odt-code-line">└── inquirer@0.5.1 (readline2@0.1.0, mute-stream@0.0.4, through@2.3.4, async@0.8</span>
+<span class="odt-code-line">.0, lodash@2.4.1, cli-color@0.3.2)</span>
 </code></pre></div>
 
 <ul>
@@ -713,7 +713,7 @@
   </li>
 </ul>
 <p><a id="refheading1633452067866943"></a></p>
-<h3 id="633-installing-git">6.3.3. <span style="color: #4f81bd"><strong>Installing [Git]</strong></span></h3>
+<h3 id="633-installing-git">6.3.3. <span style="color: #4f81bd">Installing [Git]</span></h3>
 <p><span style="color: #000000">Git is a software version control system. There is a Windows version called [msysgit] available at the URL [</span><a href="http://msysgit.github.io/"><u><span style="color: #0563c1">http://msysgit.github.io/</span></u></a><span style="color: #000000">]. We will not use [msysgit] to manage versions of our application, but simply to download JS libraries found on sites like [https://github.com], which require a special access protocol provided by the [msysgit] client</span></p>
 <p><span style="color: #000000">The installation wizard offers several steps, including the following:</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001D1000000F3D98AAFA0.png" style="display:inline-block; margin:4px;width:8.64cm;height:4.516cm;" class="odt-zoomable" data-zoom-src="images/10000000000001D1000000F3D98AAFA0.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001AE000000E12ECC76E3.png" style="display:inline-block; margin:4px;width:7.96cm;height:4.165cm;" class="odt-zoomable" data-zoom-src="images/10000000000001AE000000E12ECC76E3.png" /></td></tr></table>
@@ -736,7 +736,7 @@
 </ul>
 
 <p><a id="refheading1633472067866943"></a></p>
-<h3 id="634-configuring-webstorm">6.3.4. <span style="color: #4f81bd"><strong>Configuring [WebStorm]</strong></span></h3>
+<h3 id="634-configuring-webstorm">6.3.4. <span style="color: #4f81bd">Configuring [WebStorm]</span></h3>
 <p><span style="color: #000000">Let’s now check the [WebStorm] configuration</span></p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000023F000001D0C3812AD7.png" style="display:inline-block; margin:4px;width:8.64cm;height:6.973cm;" class="odt-zoomable" data-zoom-src="images/100000000000023F000001D0C3812AD7.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000139000000EE0387A516.png" style="display:inline-block; margin:4px;width:5.791cm;height:4.403cm;" class="odt-zoomable" data-zoom-src="images/1000000000000139000000EE0387A516.png" /></td></tr></table>
 
@@ -744,7 +744,7 @@
 
 <p><span style="color: #000000">Above, select option [1]. The list of already installed [node.js] modules appears in [2]. This list should only contain line [3] for the [bower] module if you followed the previous installation process.</span></p>
 <p><a id="refheading454551405398942"></a></p>
-<h2 id="64-installing-an-android-emulator">6.4. <span style="color: #4f81bd"><strong>Installing an Android emulator</strong></span></h2>
+<h2 id="64-installing-an-android-emulator">6.4. <span style="color: #4f81bd">Installing an Android emulator</span></h2>
 <p>The emulators provided with the Android SDK are slow, which discourages their use. The company [<a href="http://www.genymotion.com/features/"><u><span style="color: #0563c1">Genymotion</span></u></a>] offers a much more powerful emulator. It is available at the URL [<a href="https://cloud.genymotion.com/page/launchpad/download/"><u><span style="color: #0563c1">https://cloud.genymotion.com/page/launchpad/download/</span></u></a>] </p>
 <p>(February 2014).</p>
 <p>You will need to register to obtain a version for personal use. Download the [Genymotion] product with the VirtualBox virtual machine;</p>
@@ -766,7 +766,7 @@
   </li>
 </ul>
 <p><a id="refheading2334521890746156"></a></p>
-<h2 id="65-installing-the-chrome-advanced-rest-client-plugin">6.5. <span style="color: #4f81bd"><strong>Installing the Chrome [Advanced Rest Client] plugin</strong></span></h2>
+<h2 id="65-installing-the-chrome-advanced-rest-client-plugin">6.5. <span style="color: #4f81bd">Installing the Chrome [Advanced Rest Client] plugin</span></h2>
 <p>In this document, we use Google&#x27;s <strong>Chrome</strong> browser (<a href="http://www.google.fr/intl/fr/chrome/browser/"><u><span style="color: #0563c1">http://www.google.fr/intl/fr/chrome/browser/</span></u></a>). We will add the [<a id="advanced-rest-client"></a> Advanced Rest Client] extension to it. Here&#x27;s how to do it:</p>
 <ul>
   <li>Go to the [Google Web Store] (<a href="https://chrome.google.com/webstore"><u><span style="color: #0563c1">https://chrome.google.com/webstore</span></u></a>) using the Chrome browser;

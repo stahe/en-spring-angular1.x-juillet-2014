@@ -578,10 +578,10 @@
 
 
 <p><a id="refheading112468271450484"></a></p>
-<h1 id="4-running-the-application">4. <span style="color: #365f91"><strong>Running the application</strong></span></h1>
+<h1 id="4-running-the-application">4. <span style="color: #365f91">Running the application</span></h1>
 <p>We now want to run the application outside of the STS IDE (for the server) and WebStorm (for the client).</p>
 <p><a id="refheading112470271450484"></a></p>
-<h2 id="41-deploying-the-web-service-on-a-tomcat-server">4.1. <span style="color: #4f81bd"><strong>Deploying the web service on a Tomcat server</strong></span></h2>
+<h2 id="41-deploying-the-web-service-on-a-tomcat-server">4.1. <span style="color: #4f81bd">Deploying the web service on a Tomcat server</span></h2>
 <p>We saw in Section<a href="#refheading570371429907001"><u><span style="color: #0563c1"> 2.11.9</span></u></a> how to create a WAR archive for Tomcat. We repeat the process here. First, to preserve the existing structure, we duplicate the Eclipse project [rdvmedecins-webapi-v3] into [rdvmedecins-webapi-v4].</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000000F6000000A1154D1075.png" style="display:inline-block; margin:4px;width:4.56cm;height:2.985cm;" class="odt-zoomable" data-zoom-src="images/10000000000000F6000000A1154D1075.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td></tr></table>
 
@@ -646,9 +646,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected </span><span style="color:#000000">SpringApplicationBuilder configure(SpringApplicationBuilder application) {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="font-weight:bold;color:#7f0055">return </span><span style="color:#000000">application.sources(AppConfig.</span><span style="font-weight:bold;color:#7f0055">class</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -712,7 +712,7 @@
 <p>In [1], enter the URL of the new web service [http://localhost:8080/rdvmedecins-webapi-v4]. You will see the following result:</p>
 <p><img src="images/10000000000004B4000002A9BA88E4D6.png" style="width:21.001cm;height:11.878cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004B4000002A9BA88E4D6.png" /></p>
 <p><a id="refheading112472271450484"></a></p>
-<h2 id="42-deploying-the-angular-client-on-the-tomcat-server">4.2. <span style="color: #4f81bd"><strong>Deploying the Angular client on the Tomcat server</strong></span></h2>
+<h2 id="42-deploying-the-angular-client-on-the-tomcat-server">4.2. <span style="color: #4f81bd">Deploying the Angular client on the Tomcat server</span></h2>
 <p>Now that the web service has been deployed on Tomcat, we will now deploy the Angular client on a server as well. This could very well be the server that is already hosting the web service. We will take this approach.</p>
 <p>First, we duplicate the client [rdvmedecins-angular-v2] into [rdvmedecins-angular-v3] and make the following changes:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000003980000019CF396B9A2.png" style="display:inline-block; margin:4px;width:12.171cm;height:5.45cm;" class="odt-zoomable" data-zoom-src="images/10000000000003980000019CF396B9A2.png" /></td></tr></table>
@@ -732,43 +732,43 @@
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">html </span><span style="color:#000000">ng-app=</span><span style="font-style:italic;color:#2a00ff">&quot;rdvmedecins&quot;</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">head</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">title</span><span style="color:#008080">&gt;</span><span style="color:#000000">RdvMedecins</span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/title</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#008080">...</span></span>
+<span class="odt-code-line">...</span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#3f5fbf">&lt;!-- CSS --&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">...</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">link </span><span style="color:#000000">href=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/bootstrap-theme.min.css&quot; </span><span style="color:#000000">rel=</span><span style="font-style:italic;color:#2a00ff">&quot;stylesheet&quot;</span><span style="color:#008080">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">link </span><span style="color:#000000">href=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/bootstrap-select.min.css&quot; </span><span style="color:#000000">rel=</span><span style="font-style:italic;color:#2a00ff">&quot;stylesheet&quot;</span><span style="color:#008080">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/head</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;!-- controller [appCtrl], model [app] --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- controller [appCtrl], model [app] --&gt;</span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">body </span><span style="color:#000000">ng-controller=</span><span style="font-style:italic;color:#2a00ff">&quot;appCtrl&quot;</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">div </span><span style="color:#000000">class=</span><span style="font-style:italic;color:#2a00ff">&quot;container&quot;</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">  </span><span style="color:#008080">...</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/div</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;!-- Bootstrap core JavaScript ================================================== --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- Bootstrap core JavaScript ================================================== --&gt;</span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/jquery.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/bootstrap.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/bootstrap-select.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/footable.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;!-- angular js --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- angular js --&gt;</span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/angular.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/ui-bootstrap-tpls.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/angular-route.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/angular-translate.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">script </span><span style="color:#000000">type=</span><span style="font-style:italic;color:#2a00ff">&quot;text/javascript&quot; </span><span style="color:#000000">src=</span><span style="font-style:italic;color:#2a00ff">&quot;lib/angular-base64.min.js&quot;</span><span style="color:#008080">&gt;&lt;</span><span style="color:#3f7f7f">/script</span><span style="color:#008080">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;!-- modules --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- modules --&gt;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">&lt;!-- services --&gt;</span>
 <span class="odt-code-line"><span style="color:#008080">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;!-- services --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#008080">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;!-- directives --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#008080">...</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;!-- controllers --&gt;</span></span>
-<span class="odt-code-line"><span style="color:#008080">....</span></span>
+<span class="odt-code-line">&lt;!-- directives --&gt;</span>
+<span class="odt-code-line">...</span>
+<span class="odt-code-line">&lt;!-- controllers --&gt;</span>
+<span class="odt-code-line">....</span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/body</span><span style="color:#008080">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#008080">&lt;</span><span style="color:#3f7f7f">/html</span><span style="color:#008080">&gt;</span></span>
 </code></pre></div>
 
 <p>Additionally, the [loginCtrl] controller has been modified to point to the correct server so that the user does not have to type the URL:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#3f7f5f">// credentials</span></span>
+<span class="odt-code-line">// credentials</span>
 <span class="odt-code-line"><span style="color:#000000">app.serverUrl = </span><span style="color:#2a00ff">&quot;http://localhost:8080/rdvmedecins-webapi-v4&quot;</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">app.username = </span><span style="color:#2a00ff">&quot;admin&quot;</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">app.password = </span><span style="color:#2a00ff">&quot;admin&quot;</span><span style="color:#000000">;</span></span>
@@ -792,9 +792,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#646464">@Override</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="font-weight:bold;color:#7f0055">protected void </span><span style="color:#000000">configure(HttpSecurity http) </span><span style="font-weight:bold;color:#7f0055">throws </span><span style="color:#000000">Exception {</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// CSRF</span></span>
-<span class="odt-code-line"><span style="color:#000000">        http.csrf().disable();</span></span>
+<span class="odt-code-line">        http.csrf().disable();</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// The password is transmitted via the Authorization: Basic xxxx header</span></span>
-<span class="odt-code-line"><span style="color:#000000">        http.httpBasic();</span></span>
+<span class="odt-code-line">        http.httpBasic();</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#3f7f5f">// The HTTP OPTIONS method must be allowed for all</span></span>
 <span class="odt-code-line"><span style="color:#000000">        http.authorizeRequests() </span><span style="color:#3f7f5f">//</span></span>
 <span class="odt-code-line"><span style="color:#000000">                .antMatchers(HttpMethod.</span><span style="font-style:italic;color:#0000c0">OPTIONS</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;/&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;/**&quot;</span><span style="color:#000000">).permitAll();</span></span>
@@ -805,7 +805,7 @@
 <span class="odt-code-line"><span style="color:#000000">        http.authorizeRequests() </span><span style="color:#3f7f5f">//</span></span>
 <span class="odt-code-line"><span style="color:#000000">                .antMatchers(</span><span style="color:#2a00ff">&quot;/&quot;</span><span style="color:#000000">, </span><span style="color:#2a00ff">&quot;/**&quot;</span><span style="color:#000000">) </span><span style="color:#3f7f5f">// all URLs</span></span>
 <span class="odt-code-line"><span style="color:#000000">                .hasRole(</span><span style="color:#2a00ff">&quot;ADMIN&quot;</span><span style="color:#000000">);</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 </code></pre></div>
 
 <ul>
@@ -817,7 +817,7 @@
 <p><img src="images/100000000000060700000238D88F7EC9.png" style="width:17.729cm;height:6.526cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000060700000238D88F7EC9.png" /></p>
 <p>This time, it works.</p>
 <p><a id="refheading112474271450484"></a></p>
-<h2 id="43-cors-headers">4.3. <span style="color: #4f81bd"><strong>CORS Headers</strong></span></h2>
+<h2 id="43-cors-headers">4.3. <span style="color: #4f81bd">CORS Headers</span></h2>
 <p>You may recall that we struggled quite a bit to handle CORS headers. In the previous example:</p>
 <ul>
   <li>the web service is at the URL [http://localhost:8080/rdvmedecins-webapi-v4];
@@ -899,28 +899,28 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span style="color:#000000">C:\Users\Serge Tahé&gt;</span><span style="color:#ff3333">ipconfig</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">Windows IP Configuration</span></span>
+<span class="odt-code-line">Windows IP Configuration</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">Wireless Network Adapter Local Area Connection* 15:</span></span>
+<span class="odt-code-line">Wireless Network Adapter Local Area Connection* 15:</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">   Media status. . . . . . . . . . . . : Media disconnected</span></span>
-<span class="odt-code-line"><span style="color:#000000">   Connection-specific DNS suffix. . . :</span></span>
+<span class="odt-code-line">   Media status. . . . . . . . . . . . : Media disconnected</span>
+<span class="odt-code-line">   Connection-specific DNS suffix. . . :</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">Ethernet adapter Local Area Connection :</span></span>
+<span class="odt-code-line">Ethernet adapter Local Area Connection :</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">   Connection-specific DNS suffix. . . : ad.univ-angers.fr</span></span>
-<span class="odt-code-line"><span style="color:#000000">   Local link IPv6 address. . . . .: fe80::698b:455a:925:6b13%4</span></span>
+<span class="odt-code-line">   Connection-specific DNS suffix. . . : ad.univ-angers.fr</span>
+<span class="odt-code-line">   Local link IPv6 address. . . . .: fe80::698b:455a:925:6b13%4</span>
 <span class="odt-code-line"><span style="color:#000000">   IPv4 address. . . . . . . . . . . . . .:</span><span style="color:#ff3333"> 172.19.81.34</span></span>
-<span class="odt-code-line"><span style="color:#000000">   Subnet mask. . . . . . . . . . . . . .: 255.255.0.0</span></span>
-<span class="odt-code-line"><span style="color:#000000">   Default gateway. . . . . . . . . : 172.19.0.254</span></span>
+<span class="odt-code-line">   Subnet mask. . . . . . . . . . . . . .: 255.255.0.0</span>
+<span class="odt-code-line">   Default gateway. . . . . . . . . : 172.19.0.254</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">Wi-Fi wireless network adapter:</span></span>
+<span class="odt-code-line">Wi-Fi wireless network adapter:</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">   Media status. . . . . . . . . . . . : Media disconnected</span></span>
-<span class="odt-code-line"><span style="color:#000000">   Connection-specific DNS suffix. . . :</span></span>
+<span class="odt-code-line">   Media status. . . . . . . . . . . . : Media disconnected</span>
+<span class="odt-code-line">   Connection-specific DNS suffix. . . :</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">...</span></span>
+<span class="odt-code-line">...</span>
 </code></pre></div>
 
 <p>Note either the Wi-Fi IP address (lines 6–9) or the local network IP address (lines 11–17). Then use this IP address in the web server URL:</p>
@@ -937,7 +937,7 @@
 
 <p>This is irrelevant for the Android app. It does not run in a browser. The CORS header requirement comes from the browser, not the server.</p>
 <p><a id="refheading112968271450484"></a></p>
-<h2 id="45-deploying-the-angular-client-on-an-android-smartphone-emulator">4.5. <span style="color: #4f81bd"><strong>Deploying the Angular client on an Android smartphone emulator</strong></span></h2>
+<h2 id="45-deploying-the-angular-client-on-an-android-smartphone-emulator">4.5. <span style="color: #4f81bd">Deploying the Angular client on an Android smartphone emulator</span></h2>
 <p>We repeat the previous step using a smartphone emulator. We want to check how our client behaves on small screens:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000057E0000023E9AA273B1.png" style="display:inline-block; margin:4px;width:17.999cm;height:7.348cm;" class="odt-zoomable" data-zoom-src="images/100000000000057E0000023E9AA273B1.png" /></td></tr></table>
 
