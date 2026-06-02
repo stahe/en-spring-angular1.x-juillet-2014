@@ -57,6 +57,8 @@
     
       <link rel="stylesheet" href="stylesheets/focus.css">
     
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -357,14 +359,14 @@
   
   
     <li class="md-nav__item">
-      <a href="the-angular-js-client.html" class="md-nav__link">
+      <a href="the-angular-client-js.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    3. The Angular JS client
+    3. The Angular client JS
   
 
     
@@ -391,7 +393,7 @@
   <span class="md-ellipsis">
     
   
-    4. Running the application
+    4. Running the Application
   
 
     
@@ -485,12 +487,12 @@
 
 
 
-<p><a id="refheading1633332067866943"></a></p>
+<p><span id="refheading1633332067866943" name="refheading1633332067866943" class="odt-bookmark-anchor"></span></p>
 <h1 id="5-conclusion">5. <span style="color: #365f91">Conclusion</span></h1>
 <p><span style="color: #000000">We built the following client/server application:</span></p>
 <p><img src="images/1000000000000294000002EC2BFC7EC3.png" width="396" height="449" style="width:10.479cm;height:11.876cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000294000002EC2BFC7EC3.png" /></p>
-<p><span style="color: #000000">To arrive at the final version of the code, we had to explain many aspects of the AngularJS and Spring 4 frameworks. This document can therefore be used to learn how to use these two frameworks. Section</span><a href="#refheading569731429907001"><u><span style="color: #0563c1"> 1.3</span></u></a><span style="color: #000000"> explains where to find the code and how to use it.</span></p>
-<p><span style="color: #000000">We have demonstrated that the client/server application is usable in various environments:</span></p>
+<p><span style="color: #000000">To arrive at the final version code, we had to explain many aspects of the AngularJS and Spring 4 frameworks. This document can therefore be used to learn how to use these two frameworks. Section</span><a href="introduction.html#refheading569731429907001"><u><span style="color: #0563c1"> 1.3</span></u></a><span style="color: #000000"> explains where to find the code and how to use it.</span></p>
+<p><span style="color: #000000">We have demonstrated that the client/server application can be used in various environments:</span></p>
 <ul>
   <li><span style="color: #000000">as a traditional web application;</span>
   </li>
@@ -498,20 +500,20 @@
   </li>
 </ul>
 
-<p><span style="color: #000000">Once again, this tutorial is not exhaustive in its coverage of the two frameworks. For Angular, we would certainly need to cover the testing tools that accompany it. Testing is an essential step when writing an application. The tools associated with Angular allow for automating these tests and incorporating them into a continuous integration process.</span></p>
+<p><span style="color: #000000">Once again, this tutorial is not exhaustive in its coverage of the two frameworks. For Angular, we would certainly need to cover the testing tools that accompany it. Testing is an essential step when writing an application. The tools associated with Angular allow for the automation of these tests and their inclusion in a continuous integration process.</span></p>
 <p><span style="color: #000000">From this work, I’ll take away two key points:</span></p>
 <ul>
-  <li><span style="color: #000000">Writing the </span><b>Spring</b><span style="color: #000000"> web service was moderately complicated. From the start, I was familiar with Spring’s concepts. I only encountered difficulties with securing the web service and later with managing CORS HTTP headers—two areas I was unfamiliar with;</span>
+  <li><span style="color: #000000">writing the </span><b>Spring</b><span style="color: #000000"> web service was moderately complicated. From the start, I was familiar with Spring concepts. I only encountered difficulties with securing the web service and later with managing the headers HTTP and CORS, two areas I was unfamiliar with;</span>
   </li>
-  <li><span style="color: #000000">Writing the </span><b>Angular</b><span style="color: #000000"> client was much more complex for several reasons:</span>
+  <li><span style="color: #000000">Writing the </span><b>Angular</b><span style="color: #000000"> client was much more complex for various reasons:</span>
     <ul>
-      <li><span style="color: #000000">I lacked sufficient knowledge of the JavaScript language and its capabilities;</span>
+      <li><span style="color: #000000">I lacked sufficient knowledge of the Javascript language and its capabilities;</span>
       </li>
-      <li><span style="color: #000000">I had trouble understanding how asynchronous programming works within the browser. I was thinking of it as on a server, where this asynchrony is achieved through the simultaneous use of </span><span style="color: #000000">multiple threads. In the browser, there is only one thread, and asynchronous tasks are processed sequentially rather than in parallel. More specifically, asynchronous tasks can run in parallel (multiple HTTP requests, for example), but the events they trigger upon completion are processed sequentially. There is therefore no concurrent execution to manage, along with the many issues that come with it;</span>
+      <li><span style="color: #000000">I had trouble understanding how asynchronous programming worked within the browser. I was thinking of it as on a server, where this asynchrony is achieved through the simultaneous use of </span><span style="color: #000000">multiple threads. In the browser, there is only one thread, and asynchronous tasks are processed sequentially rather than in parallel. More specifically, asynchronous tasks can run in parallel (multiple HTTP requests, for example), but  the events they trigger upon completion are processed sequentially. There is therefore no concurrent execution to manage, along with the many issues that come with it;</span>
       </li>
-      <li><span style="color: #000000">Angular is a rich framework with many concepts (MVC, directives, services, model scope, etc.). It takes a long time to learn;</span>
+      <li><span style="color: #000000">Angular is a rich framework with many concepts (MVC, directives, services, model scope, etc.). Learning it is long;</span>
       </li>
-      <li><span style="color: #000000">Angular does not impose a specific development method. Thus, to achieve the same result, one can use different architectures. This is confusing. I am more comfortable with closed frameworks where everyone uses the same design patterns. I have therefore constantly sought to replicate the design patterns I use on the server side. I am satisfied with the result because I believe it is reproducible. That is what I was looking for. But I have no idea whether or not I have strayed from Angular’s “best practices”;</span>
+      <li><span style="color: #000000">Angular does not impose a specific development method. Thus, to achieve the same result, one can use different architectures. This is confusing. I am more comfortable with closed frameworks where everyone uses the same design patterns. I have therefore constantly sought to replicate the design patterns I use on the server side. I am satisfied with the result because I believe it is reproducible. That is what I was looking for. But I have no idea whether or not I have deviated from Angular “best practices”;</span>
       </li>
     </ul>
   </li>
